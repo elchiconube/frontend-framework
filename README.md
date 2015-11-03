@@ -2,28 +2,53 @@
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 ## Installation
+
 You need Grunt installed globally.
 ```sh
 $ npm i -g grunt
 ```
-After that you only need to run
-
+Once Grunt has been installed install the plugins
 ```sh
 $ npm install
 ```
+Finally create basic folders and files
+```sh
+$ grunt
+```
 
 ## Documentation
-Framework to generate your style.css with nice arquitecture using atomic web design, sass and grunt. It works for every project it doesn't matter if you use Wordpress, Drupal, Symphony, Angular or whatever you want.
+The framework helps you to generate your style.css with nice arquitecture using atomic web design, sass and grunt. It works for every project it doesn't matter if you use Wordpress, Drupal, Symphony, Angular or whatever you want.
 
 These framework is based on [Brad Frost's Atomic Design post](http://bradfrost.com/blog/post/atomic-web-design/)
-Note: Files that begin with "_" are ignored even if they match the globbing pattern. This is done to match the expected Sass partial behaviour.
+
+### Tasks
+#### Generate basic folders and files
+```sh
+$ grunt
+```
+#### Start development mode
+```sh
+$ grunt start
+```
+#### Validate CSS and HTML
+```sh
+$ grunt validate
+```
+
+
 
 ## Frontend Tecnologies
-### Sass task
+
+### Grunt
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide
+
+### Sass
 _Run this task with the `grunt sass` command._
 [Sass](http://sass-lang.com) is a preprocessor that adds nested rules, variables, mixins and functions, selector inheritance, and more to CSS. Sass files compile into well-formatted, standard CSS to use in your site or application.
 
 This task requires you to have [Ruby](http://www.ruby-lang.org/en/downloads/) and [Sass](http://sass-lang.com/download.html) installed. If you're on OS X or Linux you probably already have Ruby installed; test with `ruby -v` in your terminal. When you've confirmed you have Ruby installed, run `gem install sass` to install Sass.
+
+[Plugin docmentation](https://github.com/gruntjs/grunt-contrib-sass)
 
 Note: Files that begin with "_" are ignored even if they match the globbing pattern. This is done to match the expected [Sass partial behaviour](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials).
 

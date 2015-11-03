@@ -17,6 +17,11 @@ Framework to generate your style.css with nice arquitecture using atomic web des
 
 These framework is based on [Brad Frost's Atomic Design post](http://bradfrost.com/blog/post/atomic-web-design/)
 
+
+### Frontend Tecnologies
+  - SASS
+  - JADE
+
 ### Based on
   - [DrupalCon 2015 Component Driven Design and Development](https://events.drupal.org/barcelona2015/sessions/component-driven-design-and-development)
   - [Wakkos framework](https://github.com/Wakkos/Wakkos-CSS-Framework/tree/Patrones/scss)

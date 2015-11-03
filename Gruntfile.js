@@ -5,28 +5,28 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		browserSync: {
-            dev: {
-                bsFiles: {
-                    src : [
-                        'css/*.css',
-                        'templates/*.html'
-                    ]
-                },
-                options: {
-                    watchTask: true,
-                    server: './templates'
-                }
-            }
-        },
+			dev: {
+				bsFiles: {
+					src : [
+						'css/*.css',
+						'templates/*.html'
+					]
+				},
+				options: {
+					watchTask: true,
+					server: './templates'
+				}
+			}
+		},
 		htmllint: {
-	      all:{
-			  options: {
-				  ignore: 'The “clear” attribute on the “br” element is obsolete. Use CSS instead.',
-				  reporterOutput: 'test/html.txt'
-			  },
-			  src: "templates/*.html"
-		  }
-	    },
+			all:{
+				options: {
+					ignore: 'The “clear” attribute on the “br” element is obsolete. Use CSS instead.',
+					reporterOutput: 'test/html.txt'
+				},
+				src: "templates/*.html"
+			}
+		},
 		clean: ["test/html.json"],
 		jade: {
 			compile: {
@@ -57,12 +57,10 @@ module.exports = function(grunt) {
 			}
 		},
 		sass: {
-			options: {
-				sourceMap: true,
-				sourceMapEmbed: false,
-				style: 'compressed'
-			},
 			dist: {
+				options: {
+					style: 'compressed'
+				},
 				files: [{
 					expand: true,
 					cwd: 'sass',
@@ -71,40 +69,26 @@ module.exports = function(grunt) {
 					ext: '.css'
 				}]
 			}
-		},
-		cssmin: {
-		  target: {
-		    files: [{
-		      expand: true,
-		      cwd: 'css',
-		      src: ['*.css'],
-		      dest: 'css',
-		      ext: '.min.css'
-		    }]
-		  }
 		}
 	});
 
 	/* Load plugins  */
-	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-jade');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-html');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-jade');
 
 	/* Task  */
-
-	// ngrok
 
 	// Validate HTML
 	grunt.registerTask('validate', ['clean','htmllint']);
 
 	// Dev mode
-	grunt.registerTask('min', ['cssmin']);
+	grunt.registerTask('start', ['browserSync', 'watch']);
 
-	// Dev mode
-	grunt.registerTask('default', ['browserSync', 'watch']);
+	// Initial task
+	grunt.registerTask('default', ['sass', 'jade']);
 
 };

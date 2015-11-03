@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    $STYLE
+\*------------------------------------*/
+/**
+ * Here we add all the SASS files that will be
+ * compiled at: /css/style.css.
+ */
+
+/**
+* Utilities
+**/
+@import "utilities/reset.scss";
+@import "utilities/fonts.scss";
+@import "utilities/variables.scss";
+@import "utilities/mixins.scss";
+@import "utilities/common.scss";
+// @import "utilities/animations.scss";
+
+/**
+* Atoms
+**/
+ @import "atoms/global.scss";
+
+/**
+* Molecules
+**/
+// @import "molecules/file.scss";
+
+/**
+* Organisms
+**/
+// @import "organisms/file.scss";
+
+/**
+* Templates
+**/
+//@import "templates/file.scss";

@@ -1,0 +1,92 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+/*
+* Basic variables of project
+*/
+
+/*------------------------------------*\
+    $IMAGE-DIR
+\*------------------------------------*/
+
+//Use: background-image:url("#{$image-dir}/btn.jpg");
+
+$image-dir: "../img";
+
+/*------------------------------------*\
+    $FONT
+\*------------------------------------*/
+
+$font-base  :  Helvetica, Arial, sans-serif;
+$font-alt   :  Times, "Times New Roman";
+$font-size  :  16px;
+
+/*------------------------------------*\
+    $COLOR
+\*------------------------------------*/
+
+$color-main       :  rgb(68,168,222);
+$color-black      :  rgb(0,0,0);
+$color-grey       :  rgb(204,204,204);
+$color-black_grey :  rgb(51,51,51);
+$color-white      :  rgb(255,255,255);
+$color-white_grey :  rgb(245,245,245);
+$color-red        :  rgb(244,67,54);
+$color-green      :  rgb(76,175,80);
+$color-teal       :  rgb(0,150,136);
+$color-yellow     :  rgb(245,194,68);
+$color-fb      	  :  rgb(59,89,182);
+$color-tw      	  :  rgb(64,153,255);
+$color-yt		  :  rgb(255,51,51);
+$color-gplus 	  :  rgb(221,75,57);
+$color-ig		  :  rgb(78,67,60);
+$color-li		  :  rgb(0,119,181);
+
+/*------------------------------------*\
+    $COLOR CHANGE AMOUNT
+\*------------------------------------*/
+
+$color-percent : 15%;
+
+/*------------------------------------*\
+    $TRANSITIONS
+\*------------------------------------*/
+
+$transition-time : 300ms;
+$transition-tf: ease-out;
+
+/*------------------------------------*\
+    $SIZES
+\*------------------------------------*/
+
+$size-s    :  0.5rem;
+$size-s-m  :  0.9rem;
+$size-m    :  1.0rem;
+$size-m-l  :  1.5rem;
+$size-l    :  2.0rem;
+$size-l-xl :  2.5rem;
+$size-xl   :  3.0rem;
+$size-xxl  :  4.0rem;
+
+/*------------------------------------*\
+    $BORDER RADIUS
+\*------------------------------------*/
+
+$border-radius : 3px;
+
+/*------------------------------------*\
+    $INDEX
+\*------------------------------------*/
+
+$index-xl  : 9999;
+
+/*------------------------------------*\
+    $BREAKPOINTS
+\*------------------------------------*/
+
+$bp-xl  : 85.00em;   // 1360px //
+$bp-l   : 68.75em;   // 1100px //
+$bp-m   : 48.00em;   //  768px //
+$bp-s-m : 37.50em;   //  600px //
+$bp-s   : 30.00em;   //  480px //

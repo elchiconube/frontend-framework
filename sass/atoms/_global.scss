@@ -9,5 +9,36 @@ body{
 	background-color: $color-white;
 	color:$color-black_grey;
 	font-size: $font-size;
-	background-color: black;
+}
+
+/*------------------------------------*\
+    $TEXT
+\*------------------------------------*/
+
+h1,h2,h3,h4,h5{}
+
+p{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+blockquote{}
+
+/*------------------------------------*\
+    $INLINE ELEMENTS
+\*------------------------------------*/
+
+a{}
+
+strong{}
+
+em{}
+
+/*------------------------------------*\
+    $IMAGES
+\*------------------------------------*/
+
+img{
+	max-width: 100%;
+ 	height: auto;
 }

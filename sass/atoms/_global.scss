@@ -8,7 +8,6 @@ body{
 	font-family: $font-base;
 	background-color: $color-white;
 	color:$color-black_grey;
-	font-size: $font-size;
 }
 
 /*------------------------------------*\
@@ -16,6 +15,7 @@ body{
 \*------------------------------------*/
 
 h1,h2,h3,h4,h5{}
+
 
 p{
     -webkit-font-smoothing: antialiased;

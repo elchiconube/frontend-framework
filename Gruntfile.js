@@ -1,21 +1,36 @@
+/* global authtoken */
+
 module.exports = function(grunt) {
 
 	require('load-grunt-tasks')(grunt);
 	require('time-grunt')(grunt);
 
+
+	//Set global variables
+
+	var globalConfig = {
+		authtoken: 'eY8MphrERwcqWT2MwFtK_2NhD97ducr6w9CKcfKNGm',
+		port: '8080'
+	};
+
 	grunt.initConfig({
+
+		globalConfig: globalConfig,
+
 		browserSync: {
-			dev: {
-				bsFiles: {
-					src : [
-						'css/*.css',
-						'templates/*.html'
-					]
+			bsFiles: {
+				src : [
+					'css/*.css',
+					'js/*.js',
+					'templates/*.html'
+				]
+			},
+			options: {
+				watchTask: true,
+				server: {
+					baseDir: ['templates', 'css'],
 				},
-				options: {
-					watchTask: true,
-					server: './templates'
-				}
+				port: '<%= globalConfig.port %>',
 			}
 		},
 		jade: {
@@ -63,14 +78,16 @@ module.exports = function(grunt) {
 		},
 		validation: {
 		    options: {
-		        reset: grunt.option('reset') || false,
+		        reset: grunt.option('reset') || true,
 		        stoponerror: true,
 		        relaxerror: ['Bad value X-UA-Compatible for attribute http-equiv on element meta.',
 							 'Using the schema for HTML with SVG 1.1, MathML 3.0, RDFa 1.1, and ITS 2.0 support.',
 						 	 'The Content-Type was “text/html”. Using the HTML parser.'], //ignores these errors
 		        generateReport: true,
 		        errorHTMLRootDir: 'report',
-		        useTimeStamp: true
+		        useTimeStamp: true,
+				doctype: 'HTML5',
+				charset: 'utf-8'
 		    },
 		    files: {
 		        src: ['templates/*.html',]
@@ -86,10 +103,36 @@ module.exports = function(grunt) {
 		  strict: {
 		    src: ['css/*.css']
 		  }
-		}
+		},
+		shell: {
+			ngrok_installer: {
+				command: [
+					'npm install ngrok -g',
+					'ngrok authtoken <%= globalConfig.authtoken %>',
+				].join('&&')
+			},
+			ngrok_launcher:{
+				command: [
+					'ngrok http 80',
+				].join('&&')
+			}
+		},
+		prompt: {
+	      target: {
+	        options: {
+	          questions: [
+	              type: 'input', // list, checkbox, confirm, input, password
+	              message: 'Give me your authtoken from ngrok', // Question to ask the user, function needs to return a string,
+	          ]
+	        }
+	      },
+	    }
 	});
 
 	/* Load plugins  */
+
+	grunt.loadNpmTasks('grunt-shell');
+	grunt.loadNpmTasks('grunt-prompt');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -100,13 +143,19 @@ module.exports = function(grunt) {
 
 	/* Tasks  */
 
+	// Ngrok
+	grunt.registerTask('prompt', ['prompt:target']);
+
+	// Ngrok
+	grunt.registerTask('ngrok', ['shell:ngrok_launcher']);
+
 	// Validate HTML
 	grunt.registerTask('validate', ['validation', 'csslint']);
-	
+
 	// Dev mode
 	grunt.registerTask('start', ['browserSync', 'watch']);
 
 	// Initial task
-	grunt.registerTask('default', ['sass', 'jade']);
+	grunt.registerTask('default', ['sass', 'jade','shell:ngrok_installer']);
 
 };

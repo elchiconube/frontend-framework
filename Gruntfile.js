@@ -116,23 +116,12 @@ module.exports = function(grunt) {
 					'ngrok http 80',
 				].join('&&')
 			}
-		},
-		prompt: {
-	      target: {
-	        options: {
-	          questions: [
-	              type: 'input', // list, checkbox, confirm, input, password
-	              message: 'Give me your authtoken from ngrok', // Question to ask the user, function needs to return a string,
-	          ]
-	        }
-	      },
-	    }
+		}
 	});
 
 	/* Load plugins  */
 
 	grunt.loadNpmTasks('grunt-shell');
-	grunt.loadNpmTasks('grunt-prompt');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -140,11 +129,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-w3c-html-validation');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
+	grunt.loadNpmTasks('grunt-galen');
 
 	/* Tasks  */
-
-	// Ngrok
-	grunt.registerTask('prompt', ['prompt:target']);
 
 	// Ngrok
 	grunt.registerTask('ngrok', ['shell:ngrok_launcher']);

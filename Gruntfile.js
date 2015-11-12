@@ -5,17 +5,12 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 	require('time-grunt')(grunt);
 
-
-	//Set global variables
-
-	var globalConfig = {
-		authtoken: 'eY8MphrERwcqWT2MwFtK_2NhD97ducr6w9CKcfKNGm',
-		port: '8080'
-	};
-
 	grunt.initConfig({
 
-		globalConfig: globalConfig,
+		// Set your favorite port and your Ngrok.com authtoken before you run grunt start to install.
+
+		port : '8080',
+		authtoken : 'eY8MphrERwcqWT2MwFtK_2NhD97ducr6w9CKcfKNGm',
 
 		browserSync: {
 			bsFiles: {
@@ -30,7 +25,7 @@ module.exports = function(grunt) {
 				server: {
 					baseDir: ['templates', 'css'],
 				},
-				port: '<%= globalConfig.port %>',
+				port: '<%= port %>',
 			}
 		},
 		jade: {
@@ -106,16 +101,14 @@ module.exports = function(grunt) {
 		},
 		shell: {
 			ngrok_installer: {
-				command: [
+				command:[
 					'npm install ngrok -g',
-					'ngrok authtoken <%= globalConfig.authtoken %>',
+					'ngrok authtoken <%= authtoken %>',
 				].join('&&')
 			},
 			ngrok_launcher:{
-				command: [
-					'ngrok http 80',
-				].join('&&')
-			}
+				command: 'echo Please run: ngrok http <%= port %>',
+			},
 		}
 	});
 

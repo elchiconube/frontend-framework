@@ -35,7 +35,7 @@ $ grunt start
 #### Validate CSS and HTML
 Check your CSS and HTML with this task
 ```sh
-$ grunt validation
+$ grunt validate
 ```
 
 #### Generate ngrok tunnel

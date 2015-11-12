@@ -81,7 +81,6 @@ Want to contribute? Great! Just open an issue or if you prefer send me a mail or
 
 ## Todos
   - Performance
-  - Testing (ngrok)
   - Precommits
 
 ## Author

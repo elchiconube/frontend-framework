@@ -23,7 +23,7 @@ These framework is based on [Brad Frost's Atomic Design post](http://bradfrost.c
 
 ### Tasks
 #### Generate basic folders and files
-With this default task you generate the minimal folder and files to start 
+With this default task you generate the minimal folder and files to start
 ```sh
 $ grunt
 ```
@@ -36,6 +36,12 @@ $ grunt start
 Check your CSS and HTML with this task
 ```sh
 $ grunt validation
+```
+
+#### Generate ngrok tunnel
+Create a ngrok tunnel to display your project
+```sh
+$ grunt ngrok
 ```
 
 ## Frontend Tecnologies

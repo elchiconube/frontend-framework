@@ -1,0 +1,21 @@
+doctype html
+html(class='no-js', lang='ES')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='x-ua-compatible', content='ie=edge')
+        block title
+            title Front-End Framework
+        block description
+            meta(description='Front-End Framework')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='shortcut icon', href='/img/favicon.png')
+        link(rel='stylesheet', href='/style.css')
+    body
+    main.main_content
+        //- <!--[if lt IE 8]>
+        //-     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        //- <![endif]-->
+        include ../organisms/header.jade
+        include ../organisms/nav.jade
+        block content
+    footer.main_footer

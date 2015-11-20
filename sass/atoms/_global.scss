@@ -2,19 +2,27 @@
     $GLOBAL
 \*------------------------------------*/
 
-html{}
+html{
+
+}
 
 body{
 	font-family: $font-base;
-	background-color: $color-black_grey;
-	color:$color-white;
+	background-color: $color-white;
+	color:$color-black_grey;
 }
 
 /*------------------------------------*\
     $TEXT
 \*------------------------------------*/
 
-h1,h2,h3,h4,h5{}
+h1,
+h2,
+h3,
+h4,
+h5{
+
+}
 
 
 p{
@@ -22,17 +30,25 @@ p{
     -moz-osx-font-smoothing: grayscale;
 }
 
-blockquote{}
+blockquote{
+
+}
 
 /*------------------------------------*\
     $INLINE ELEMENTS
 \*------------------------------------*/
 
-a{}
+a{
 
-strong{}
+}
 
-em{}
+strong{
+
+}
+
+em{
+	
+}
 
 /*------------------------------------*\
     $IMAGES

@@ -1,9 +1,11 @@
-doctype html
-html
-    head
-        title Page title
-        meta(charset='UTF-8')
-        link(rel='stylesheet', href='style.css')
-    body
-        h1 Hello World
-        p Contribute on #[a(href='http://github.com/elchiconube/frontend-framework') github]. #[strong Thanks!]
+extends layout.jade
+
+block title
+  title Welcome to Front-end Framework
+
+ block description
+      meta(description='Welcome to Front-End Framework')
+
+block content  
+  h1 Hello World
+  p Contribute on #[a(href='http://github.com/elchiconube/frontend-framework') github]. #[strong Thanks!]

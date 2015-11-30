@@ -4,7 +4,7 @@
 
 // Mediqueries y breakpoints: El mixin consta de 4 partes
 //
-//  $breakpoint: Es el Brakpoint o la variable de breakpoint, las definimos en _variables.scss
+//  $breakpoint: Es el Breakpoint o la variable de breakpoint, las definimos en _variables.scss
 //               las que vienen por defecto: $bp1, $bp2, $bp3, $bp4 y $bp5.
 //
 //  $query1: max o min, dependiendo de como queremos el Mediaquery que funcione:
@@ -13,7 +13,7 @@
 //  $query2: La segunda parte del query, lo que va después de 'min' o 'max'.
 //           -device-width, -device-height, -width etc...  - 'width' por defecto -
 //
-//  $target: El medio. PUede ser 'all', 'screen', 'print', etc...
+//  $target: El medio. Puede ser 'all', 'screen', 'print', etc...
 //           - '' por defecto -
 //  USO:
 //
@@ -39,17 +39,18 @@
 //    font-size: 2rem; }
 //    @media screen and (min-width: 85em) {
 //      h1 {
-//        font-size: 3rem; } }
+//        font-size: 3rem;
+//    }
+//  }
 //
 //  **************************************************************************
 //
 
-/**
-* Breakpoint
-*/
+/*------------------------------------*\
+    $BREAK POINTS
+\*------------------------------------*/
 
 @mixin media-query-bp($breakpoint, $query1: min, $query2: width, $target: "") {
-
 		@if $target != "" {
 			@media #{$target} and (#{$query1}-#{$query2}: #{$breakpoint}) {
 				@content;
@@ -60,212 +61,4 @@
 				@content;
 			}
 		}
-	}
-
-/**
-* Box Sizing
-*/
-@mixin box-sizing($boxsize: border-box) {
-	-webkit-box-sizing : $boxsize;
-	-moz-box-sizing : $boxsize;
-	-ms-box-sizing : $boxsize;
-	box-sizing : $boxsize;
-}
-
-/**
-* Transition
-*/
-// .transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
-@mixin transition($transition) {
-	-webkit-transition : $transition;
-	-moz-transition : $transition;
-	-ms-transition : $transition;
-	-o-transition : $transition;
-	transition : $transition;
-}
-
-/**
-* Transform
-*/
-@mixin transform($transform) {
-	-webkit-transform: $transform;
-	-ms-transform: $transform;
-	transform: $transform;
-	will-change: transform;
-}
-
-@mixin transform-style($transform-style: preserve-3d) {
-	-webkit-transform-style: $transform-style;
-	-ms-transform-style: $transform-style;
-	transform-style: $transform-style;
-}
-
-/**
-* background Size
-*/
-@mixin background-size($size){
-	-webkit-background-size : $size;
-	-moz-background-size : $size;
-	-o-background-size : $size;
-	background-size : $size;
-}
-
-/**
-* Border radius
-*/
-@mixin border-radius($topright: 0, $topleft: 0, $bottomright: 0, $bottomleft: 0) {
-	-webkit-border-top-right-radius : $topright;
-	-webkit-border-bottom-right-radius : $bottomright;
-	-webkit-border-bottom-left-radius : $bottomleft;
-	-webkit-border-top-left-radius : $topleft;
-	-moz-border-radius-topright : $topright;
-	-moz-border-radius-bottomright : $bottomright;
-	-moz-border-radius-bottomleft : $bottomleft;
-	-moz-border-radius-topleft : $topleft;
-	border-top-right-radius : $topright;
-	border-bottom-right-radius : $bottomright;
-	border-bottom-left-radius : $bottomleft;
-	border-top-left-radius : $topleft;
-	-webkit-background-clip : padding-box;
-	-moz-background-clip : padding;
-	background-clip : padding-box;
-}
-
-/**
-* Box Shadow
-*/
-@mixin box-shadow($shadow: 0 0.5px 0.2px rgba(0,0,0,.25)) {
-	-webkit-box-shadow : $shadow;
-	-moz-box-shadow : $shadow;
-	box-shadow : $shadow;
-}
-
-/**
-* Opacity
-*/
-@mixin opacity($opacity : .5) {
-	-webkit-opacity : $opacity;
-	-moz-opacity : $opacity;
-	opacity : $opacity;
-}
-
-/**
-* Bordered
-*/
-@mixin bordered($top-color: #eee, $right-color: #eee, $bottom-color: #eee, $left-color: #eee) {
-	border-top : solid 1px $top-color;
-	border-left : solid 1px $left-color;
-	border-right : solid 1px $right-color;
-	border-bottom : solid 1px $bottom-color;
-}
-
-
-/**
-* Flex
-*/
-@mixin flex {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flexbox;
-	display: flex;
-}
-
-/**
-* Flex Justify Content
-*/
-@mixin justify-content($value: flex-start) {
-	@if $value == flex-start {
-		-webkit-box-pack: start;
-		-ms-flex-pack: start;
-	} @else if $value == flex-end {
-		-webkit-box-pack: end;
-		-ms-flex-pack: end;
-	} @else if $value == space-between {
-		-webkit-box-pack: justify;
-		-ms-flex-pack: justify;
-	} @else if $value == space-around {
-		-ms-flex-pack: distribute;
-	} @else {
-		-webkit-box-pack: $value;
-		-ms-flex-pack: $value;
-	}
-	-webkit-justify-content: $value;
-	-moz-justify-content: $value;
-	justify-content: $value;
-}
-	// Shorter version:
-	@mixin flex-just($args...) { @include justify-content($args...); }
-
-	//  Flex Wrap
-	@mixin flex-wrap($value: nowrap) {
-	// No Webkit Box fallback.
-	-webkit-flex-wrap: $value;
-	-moz-flex-wrap: $value;
-	@if $value == nowrap {
-		-ms-flex-wrap: none;
-	} @else {
-		-ms-flex-wrap: $value;
-	}
-	flex-wrap: $value;
-}
-
-
-/**
-* Flex Direction
-*/
-@mixin flex-direction($value: column) {
-	@if $value == row-reverse {
-		-webkit-box-direction: reverse;
-		-webkit-box-orient: horizontal;
-	} @else if $value == column {
-		-webkit-box-direction: normal;
-		-webkit-box-orient: vertical;
-	} @else if $value == column-reverse {
-		-webkit-box-direction: reverse;
-		-webkit-box-orient: vertical;
-	} @else {
-		-webkit-box-direction: normal;
-		-webkit-box-orient: horizontal;
-	}
-	-webkit-flex-direction: $value;
-	-moz-flex-direction: $value;
-	-ms-flex-direction: $value;
-	flex-direction: $value;
-}
-	// Shorter version:
-	@mixin flex-dir($args...) { @include flex-direction($args...); }
-
-
-/**
-* Flex Shring
-*/
-@mixin flex-shrink($int: 0) {
-	-webkit-flex-shrink: $int;
-	-moz-flex-shrink: $int;
-	-ms-flex-negative: $int;
-	flex-shrink: $int;
-}
-
-/**
-* Flex Grow
-*/
-@mixin flex-grow($int: 1) {
-	-webkit-box-flex: $int;
-	-webkit-flex-grow: $int;
-	-moz-flex-grow: $int;
-	-ms-flex-positive: $int;
-	flex-grow: $int;
-}
-
-
-/**
-* Flex Order
-*/
-@mixin order($int: 0) {
-	-webkit-box-ordinal-group: $int + 1;
-	-webkit-order: $int;
-	-moz-order: $int;
-	-ms-flex-order: $int;
-	order: $int;
 }

@@ -28,11 +28,11 @@
 * Hover with opacity transition
 */
 %hover_opacity {
-	@include opacity(1);
-	@include transition(opacity $transition-time $transition-tf);
+	opacity: 1;
+	transition: opacity $transition-time $transition-tf;
 	&:hover {
-		@include opacity();
-		@include transition(opacity $transition-time $transition-tf);
+		opacity: .5;
+		transition: opacity $transition-time $transition-tf;
 		text-decoration: none;
 	}
 }
@@ -56,7 +56,7 @@
 		height: 2px;
 		background-color: $color-main;
 		width: 0;
-		@include transition(width $transition-time $transition-tf);
+		transition: width $transition-time $transition-tf;
 	}
 
 }
@@ -74,7 +74,7 @@
 		    position: absolute;
 		    width: 100%;
 		    height: 100%;
-				@include box-shadow(inset 0 0 3px 1px rgba(0,0,0,0.2));
+				box-shadow: inset 0 0 3px 1px rgba(0,0,0,0.2);
 		    z-index: 1;
 			}
 		}
@@ -108,17 +108,7 @@
 /**
 * Hide text only visually but is focusable
 */
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-	position : static;
-	clip : auto;
-	height : auto;
-	width : auto;
-	margin : 0;
-	overflow: visible;
-}
-
-.visually-hidden{
+%visually-hidden{
   position: absolute;
   height: 1px;
   width: 1px;

@@ -11,10 +11,10 @@
 **/
 @import "utilities/normalize.scss";
 @import "utilities/fonts.scss";
+@import "utilities/icons.scss";
 @import "utilities/variables.scss";
 @import "utilities/mixins.scss";
 @import "utilities/common.scss";
-// @import "utilities/animations.scss";
 
 /**
 * Atoms
@@ -24,7 +24,7 @@
 /**
 * Molecules
 **/
-// @import "molecules/file.scss";
+@import "molecules/grid.scss";
 
 /**
 * Organisms

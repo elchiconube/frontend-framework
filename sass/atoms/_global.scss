@@ -3,13 +3,12 @@
 \*------------------------------------*/
 
 html{
-
-}
-
-body{
 	font-family: $font-base;
-	background-color: $color-white;
+	background-color: $color-white_grey;
 	color:$color-black_grey;
+	font-size: 15px;
+	-ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 /*------------------------------------*\
@@ -41,8 +40,7 @@ h6 {
 }
 
 p{
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	margin: 0 0 1rem 0;
 }
 
 blockquote{
@@ -72,4 +70,34 @@ em{
 img{
 	max-width: 100%;
  	height: auto;
+}
+
+.center{
+	text-align: center;
+}
+.example{
+	min-height: 100px;
+	div{
+		background-color: $color-black;
+		min-height: 100px;
+		@extend %vcenter;
+		@include media-query-bp($bp-s,min,width,screen) {
+			opacity: .9
+	 	}
+		@include media-query-bp($bp-s-m,min,width,screen) {
+			opacity: .7
+	 	}
+		@include media-query-bp($bp-m,min,width,screen) {
+			opacity: .5
+	 	}
+		@include media-query-bp($bp-l,min,width,screen) {
+			opacity: .3
+	 	}
+		@include media-query-bp($bp-xl,min,width,screen) {
+			opacity: .1
+	 	}
+		p{
+			color:$color-white;
+		}
+	}
 }

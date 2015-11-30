@@ -1,0 +1,60 @@
+/*------------------------------------*\
+    $GRID
+\*------------------------------------*/
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: space-between;
+  .column{
+    transition: width $transition-time $transition-tf;
+    margin: $size-m 0 0 0;
+    width: 100%;
+  }
+  &.col-2{
+    &.right{
+      @include media-query-bp($bp-m,min,width,screen) {
+        .column:nth-child(1){
+          width: 74.5%;
+        }
+        .column:nth-child(2){
+          width: 24.5%;
+        }
+      }
+    }
+    &.left{
+      @include media-query-bp($bp-m,min,width,screen) {
+        .column:nth-child(1){
+          width: 24.5%;
+        }
+        .column:nth-child(2){
+          width: 74.5%;
+        }
+      }
+    }
+    .column{
+      @include media-query-bp($bp-m,min,width,screen) {
+        width: 49%;
+  	 	}
+    }
+  }
+  &.col-3{
+    .column{
+      @include media-query-bp($bp-m,min,width,screen) {
+        width: 32%;
+  	 	}
+    }
+  }
+  &.col-4{
+    .column{
+      @include media-query-bp($bp-s-m,min,width,screen) {
+        width: 49%;
+  	 	}
+      @include media-query-bp($bp-l,min,width,screen) {
+        width: 24%;
+        margin: 0;
+  	 	}
+    }
+  }
+}

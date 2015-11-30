@@ -10,7 +10,7 @@
     $IMAGE-DIR
 \*------------------------------------*/
 
-//Use: background-image:url("#{$image-dir}/btn.jpg");
+// Use: background-image:url("#{$image-dir}/btn.jpg");
 
 $image-dir: "../img";
 
@@ -18,9 +18,9 @@ $image-dir: "../img";
     $FONT
 \*------------------------------------*/
 
-$font-base  :  Helvetica, Arial, sans-serif;
-$font-alt   :  Times, "Times New Roman";
-$font-size  :  16px;
+$font-base  :  'Helvetica Neue',Helvetica,Arial,sans-serif;
+$font-alt   :  Georgia1, Georgia, serif;
+$font-size  :  15px;
 
 /*------------------------------------*\
     $COLOR
@@ -38,16 +38,16 @@ $color-teal       :  rgb(0,150,136);
 $color-yellow     :  rgb(245,194,68);
 $color-fb      	  :  rgb(59,89,182);
 $color-tw      	  :  rgb(64,153,255);
-$color-yt		  :  rgb(255,51,51);
-$color-gplus 	  :  rgb(221,75,57);
-$color-ig		  :  rgb(78,67,60);
-$color-li		  :  rgb(0,119,181);
+$color-yt		      :  rgb(255,51,51);
+$color-gplus 	    :  rgb(221,75,57);
+$color-ig		      :  rgb(78,67,60);
+$color-li		      :  rgb(0,119,181);
 
 /*------------------------------------*\
     $COLOR CHANGE AMOUNT
 \*------------------------------------*/
 
-$color-percent : 15%;
+$amount : 15%;
 
 /*------------------------------------*\
     $TRANSITIONS
@@ -70,10 +70,17 @@ $size-xl   :  3.0rem;
 $size-xxl  :  4.0rem;
 
 /*------------------------------------*\
-    $BORDER RADIUS
+    $BORDER
 \*------------------------------------*/
 
 $border-radius : 3px;
+$border-color  : rgb(204,204,204);
+
+/*------------------------------------*\
+    $SHADOW
+\*------------------------------------*/
+
+$shadow: 0 0.5px 0.2px rgba(0,0,0,.25);
 
 /*------------------------------------*\
     $INDEX

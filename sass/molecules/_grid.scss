@@ -1,60 +1,82 @@
 /*------------------------------------*\
-    $GRID
+$GRID
 \*------------------------------------*/
 
 .grid{
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
-  justify-content: space-between;
   .column{
     transition: width $transition-time $transition-tf;
-    margin: $size-m 0 0 0;
     width: 100%;
+    margin: $size-m 0 0 0;
+    @include media-query-bp($bp-s-m,min,width,screen) {
+
+    }
   }
   &.col-2{
+    @include media-query-bp($bp-s,min,width,screen) {
+      justify-content: space-between;
+      .column{
+        width: 49%;
+      }
+    }
     &.right{
-      @include media-query-bp($bp-m,min,width,screen) {
-        .column:nth-child(1){
-          width: 74.5%;
-        }
-        .column:nth-child(2){
-          width: 24.5%;
+      .column{
+        width: 100%;
+        @include media-query-bp($bp-s-m,min,width,screen) {
+          width: auto;
+          &:nth-child(1){
+            flex: 1 0 0;
+            margin-right: $size-s;
+          }
+          &:nth-child(2){
+            flex: 0 0 330px;
+            padding: $size-m;
+            box-sizing: border-box;
+            margin-left: $size-s;
+          }
         }
       }
     }
     &.left{
-      @include media-query-bp($bp-m,min,width,screen) {
-        .column:nth-child(1){
-          width: 24.5%;
-        }
-        .column:nth-child(2){
-          width: 74.5%;
+      .column{
+        width: 100%;
+        @include media-query-bp($bp-s-m,min,width,screen) {
+          width: auto;
+          &:nth-child(1){
+            flex: 0 0 330px;
+            padding: $size-m;
+            box-sizing: border-box;
+            margin-right: $size-s;
+          }
+          &:nth-child(2){
+            flex: 1 0 0;
+            margin-left: $size-s;
+          }
         }
       }
     }
-    .column{
-      @include media-query-bp($bp-m,min,width,screen) {
-        width: 49%;
-  	 	}
-    }
   }
   &.col-3{
-    .column{
-      @include media-query-bp($bp-m,min,width,screen) {
+    @include media-query-bp($bp-s-m,min,width,screen) {
+      justify-content: space-between;
+      .column{
         width: 32%;
-  	 	}
+      }
     }
   }
   &.col-4{
-    .column{
-      @include media-query-bp($bp-s-m,min,width,screen) {
+    @include media-query-bp($bp-s-m,min,width,screen) {
+      justify-content: space-between;
+      .column{
         width: 49%;
-  	 	}
-      @include media-query-bp($bp-l,min,width,screen) {
+      }
+    }
+    @include media-query-bp($bp-m-l,min,width,screen) {
+      .column{
         width: 24%;
-        margin: 0;
-  	 	}
+      }
     }
   }
 }

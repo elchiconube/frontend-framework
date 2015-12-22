@@ -1,5 +1,5 @@
 /*------------------------------------*\
-$GRID
+    $GRID
 \*------------------------------------*/
 
 .grid{
@@ -10,12 +10,12 @@ $GRID
     transition: width $transition-time $transition-tf;
     width: 100%;
     margin: $size-m 0 0 0;
-    @include media-query-bp($bp-s-m,min,width,screen) {
+    @include breakpoint(bp-s-m) {
 
     }
   }
   &.col-2{
-    @include media-query-bp($bp-s,min,width,screen) {
+    @include breakpoint(bp-s) {
       justify-content: space-between;
       .column{
         width: 49%;
@@ -24,7 +24,7 @@ $GRID
     &.right{
       .column{
         width: 100%;
-        @include media-query-bp($bp-s-m,min,width,screen) {
+        @include breakpoint(bp-s-m) {
           width: auto;
           &:nth-child(1){
             flex: 1 0 0;
@@ -42,7 +42,7 @@ $GRID
     &.left{
       .column{
         width: 100%;
-        @include media-query-bp($bp-s-m,min,width,screen) {
+        @include breakpoint(bp-s-m) {
           width: auto;
           &:nth-child(1){
             flex: 0 0 330px;
@@ -59,7 +59,7 @@ $GRID
     }
   }
   &.col-3{
-    @include media-query-bp($bp-s-m,min,width,screen) {
+    @include breakpoint(bp-s-m) {
       justify-content: space-between;
       .column{
         width: 32%;
@@ -67,13 +67,13 @@ $GRID
     }
   }
   &.col-4{
-    @include media-query-bp($bp-s-m,min,width,screen) {
+    @include breakpoint(bp-s-m) {
       justify-content: space-between;
       .column{
         width: 49%;
       }
     }
-    @include media-query-bp($bp-m-l,min,width,screen) {
+    @include breakpoint(bp-m-l) {
       .column{
         width: 24%;
       }

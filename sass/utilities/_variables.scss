@@ -19,7 +19,7 @@ $image-dir: "../img";
 \*------------------------------------*/
 
 $font-base  :  'Helvetica Neue',Helvetica,Arial,sans-serif;
-$font-alt   :  Georgia1, Georgia, serif;
+$font-alt   :  Georgia, serif;
 $font-size  :  15px;
 
 /*------------------------------------*\
@@ -92,9 +92,17 @@ $index-xl  : 9999;
     $BREAKPOINTS
 \*------------------------------------*/
 
-$bp-xl  : 85.00em;   // 1360px //
-$bp-l   : 68.75em;   // 1100px //
-$bp-m-l : 61.20em;   //  980px //
-$bp-m   : 48.00em;   //  768px //
-$bp-s-m : 41.20em;   //  660px //
-$bp-s   : 30.00em;   //  480px //
+
+$breakpoints: (
+  "bp-xl"  : 85.00em, // 1360px //
+  "bp-l"   : 68.75em, // 1100px //
+  "bp-m-l" : 61.20em, //  980px //
+  "bp-m"   : 48.00em, //  768px //
+  "bp-s-m" : 41.20em, //  660px //
+  "bp-s"   : 30.00em  //  480px //
+);
+
+// Default variables
+$default-breakpoint: root;
+$current-breakpoint: $default-breakpoint;
+$placeholders: ();

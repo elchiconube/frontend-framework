@@ -2,10 +2,13 @@
     $COMMON
 \*------------------------------------*/
 
+// Example to use it
+// @include _(clearfix);
+
 /**
 * Text overflow
 */
-%text-overflow {
+@include placeholder('text-overflow') {
 	overflow : hidden;
 	text-overflow : ellipsis;
 	white-space : nowrap;
@@ -14,7 +17,7 @@
 /**
 * The ghost, nudged to maintain perfect centering
 */
-%vcenter {
+@include placeholder('vcenter') {
 	&:before {
 		content: '';
 		display: inline-block;
@@ -27,7 +30,7 @@
 /**
 * Hover with opacity transition
 */
-%hover_opacity {
+@include placeholder('hover_opacity') {
 	opacity: 1;
 	transition: opacity $transition-time $transition-tf;
 	&:hover {
@@ -40,7 +43,7 @@
 /**
 * Better Underline effect
 */
-%better_underline{
+@include placeholder('better_underline') {
 	position: relative;
 	&:hover{
 		text-decoration: none;
@@ -64,7 +67,7 @@
 /**
 * Image with inside shadow
 */
-%shadow-inside {
+@include placeholder('shadow-inside') {
 	figure{
 		position: relative;
 		a{
@@ -84,7 +87,7 @@
 /**
 * Hide text only visually
 */
-%hide-text {
+@include placeholder('hide-text') {
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
@@ -93,7 +96,7 @@
 /**
 * Hide text
 */
-%hidden {
+@include placeholder('hidden') {
 	display : none !important;
 	visibility : hidden;
 }
@@ -101,14 +104,14 @@
 /**
 * Hide but keep layout
 */
-%invisible {
+@include placeholder('invisible') {
 	visibility : hidden;
 }
 
 /**
 * Hide text only visually but is focusable
 */
-%visually-hidden{
+@include placeholder('visually-hidden') {
   position: absolute;
   height: 1px;
   width: 1px;
@@ -120,7 +123,7 @@
 * Clear floats.
 * http://bit.ly/1e3YaBH
 */
-%clearfix {
+@include placeholder('clearfix') {
 	&::after{
         content:"";
         display:table;

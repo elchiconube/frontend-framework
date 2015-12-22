@@ -6,7 +6,7 @@ html{
 	font-family: $font-base;
 	background-color: $color-white_grey;
 	color:$color-black_grey;
-	font-size: 15px;
+	font-size: $font-size;
 	-ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -72,29 +72,35 @@ img{
  	height: auto;
 }
 
+
+/*------------------------------------*\
+    $FOR EXAMPLE
+\*------------------------------------*/
+
 .center{
 	text-align: center;
 }
+
 .example{
 	min-height: 100px;
 	div{
 		background-color: $color-black;
 		min-height: 100px;
-		@extend %vcenter;
-		@include media-query-bp($bp-s,min,width,screen) {
-			opacity: .9
+		@include _(vcenter);
+		@include breakpoint(bp-s) {
+			opacity: .9;
 	 	}
-		@include media-query-bp($bp-s-m,min,width,screen) {
-			opacity: .7
+		@include breakpoint(bp-s-m) {
+			opacity: .7;
 	 	}
-		@include media-query-bp($bp-m,min,width,screen) {
-			opacity: .5
+		@include breakpoint(bp-m) {
+			opacity: .5;
 	 	}
-		@include media-query-bp($bp-l,min,width,screen) {
-			opacity: .3
+		@include breakpoint(bp-l) {
+			opacity: .3;
 	 	}
-		@include media-query-bp($bp-xl,min,width,screen) {
-			opacity: .1
+		@include breakpoint(bp-xl) {
+			opacity: .1;
 	 	}
 		p{
 			color:$color-white;

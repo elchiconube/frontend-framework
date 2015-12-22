@@ -2,63 +2,82 @@
     $MIXINS
 \*------------------------------------*/
 
-// Mediqueries y breakpoints: El mixin consta de 4 partes
-//
-//  $breakpoint: Es el Breakpoint o la variable de breakpoint, las definimos en _variables.scss
-//               las que vienen por defecto: $bp1, $bp2, $bp3, $bp4 y $bp5.
-//
-//  $query1: max o min, dependiendo de como queremos el Mediaquery que funcione:
-//           max-width, min-width, min-device-width, etc... - 'min' por defecto -
-//
-//  $query2: La segunda parte del query, lo que va después de 'min' o 'max'.
-//           -device-width, -device-height, -width etc...  - 'width' por defecto -
-//
-//  $target: El medio. Puede ser 'all', 'screen', 'print', etc...
-//           - '' por defecto -
-//  USO:
-//
-//  **************************************************************************
-//
-//  $bp-xl : 85em;
-//
-//  h1{
-//  	font-size: $size-l;
-//
-//  	@include media-query-bp($bp-xl,min,width,screen) {
-//   		font-size: $size-xl;
-//  	}
-//  }
-//
-//  **************************************************************************
-//
-//  Compilaría:
-//
-//  **************************************************************************
-//
-//  h1 {
-//    font-size: 2rem; }
-//    @media screen and (min-width: 85em) {
-//      h1 {
-//        font-size: 3rem;
-//    }
-//  }
-//
-//  **************************************************************************
-//
+/*------------------------------------*\
+    $BREAK POINTS
+\*------------------------------------*/
+
+// Documentation: http://www.sitepoint.com/cross-media-query-extend-sass/
 
 /*------------------------------------*\
     $BREAK POINTS
 \*------------------------------------*/
 
-@mixin media-query-bp($breakpoint, $query1: min, $query2: width, $target: "") {
-		@if $target != "" {
-			@media #{$target} and (#{$query1}-#{$query2}: #{$breakpoint}) {
-				@content;
-			}
-		}
-		@else {
-			@media (#{$query1}-#{$query2}: #{$breakpoint}) {
-				@content;
-			}
-		}
+@mixin breakpoint($breakpoint) {
+      // Get the width from the keyword `$breakpoint`
+      // Or `null` if the keyword doesn't exist in `$breakpoints` map
+      $value: map-get($breakpoints, $breakpoint);
+
+  // If `$breakpoint` exists as a key in `$breakpoints`
+  @if $value != null {
+        // Update `$current-breakpoint`
+        $current-breakpoint: $breakpoint !global;
+
+    // Open a media query block
+    @media (min-width: $value) {
+      // Let the user dump content
+      @content;
+    }
+
+    // Then reset `$current-breakpoint` to `$default-breakpoint` (root)
+    $current-breakpoint: $default-breakpoint !global;
+  }
+
+  // If `$breakpoint` doesn't exist in `$breakpoints`,
+  // Warn the user and do nothing
+  @else {
+    @warn "Invalid breakpoint `#{$breakpoint}`.";
+  }
+}
+
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+
+
+@mixin placeholder($name) {
+      // If placeholder doesn't exist yet in `$placeholders` list
+      @if not index($placeholders, $name) {
+        // Store its name
+        $placeholders: append($placeholders, $name) !global;
+
+    // At root level
+    @at-root {
+      // Looping through `$breakpoints`
+      @each $breakpoint, $value in $breakpoints {
+            // Opening a media query block
+            @media (min-width: $value) {
+              // Generating a placeholder
+              // Called $name-$breakpoint
+              %#{$name}-#{$breakpoint} {
+            @content;
+          }
+        }
+      }
+
+      // And dumping a placeholder out of any media query as well
+      // so basically at root level
+      %#{$name}-#{$default-breakpoint} {
+        @content;
+      }
+    }
+  }
+
+  // If placeholder already exists, just warn the user
+  @else {
+    @warn "Placeholder `#{$name}` already exists.";
+  }
+}
+
+@mixin _($name) {
+      @extend %#{$name}-#{$current-breakpoint} !optional;
 }

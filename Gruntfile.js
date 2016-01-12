@@ -74,7 +74,7 @@ module.exports = function(grunt) {
         processors: [
           require('pixrem')(),
           require('autoprefixer')({browsers: 'last 2 versions'}),
-          require('cssnano')({ zindex: false,}),
+          require('cssnano')({ zindex: false, calc: false}),
         ],
       },
       dist: {

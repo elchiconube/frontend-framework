@@ -2,80 +2,169 @@
     $GRID
 \*------------------------------------*/
 
+// .grid{
+//   display: flex;
+//   flex-wrap: wrap;
+//   box-sizing: border-box;
+//   .column{
+//     transition: width $transition-time $transition-tf;
+//     width: 100%;
+//     margin: $size-m 0 0 0;
+//   }
+//   &.col-2{
+//     @include breakpoint(bp-s) {
+//       justify-content: space-between;
+//       .column{
+//         width: 49%;
+//       }
+//     }
+//     &.right{
+//       .column{
+//         width: 100%;
+//         @include breakpoint(bp-s-m) {
+//           width: auto;
+//           &:nth-child(1){
+//             flex: 1 0 0;
+//             margin-right: $size-s;
+//           }
+//           &:nth-child(2){
+//             flex: 0 0 300px;
+//             padding: $size-m;
+//             box-sizing: border-box;
+//             margin-left: $size-s;
+//           }
+//         }
+//       }
+//     }
+//     &.left{
+//       .column{
+//         width: 100%;
+//         @include breakpoint(bp-s-m) {
+//           width: auto;
+//           &:nth-child(1){
+//             flex: 0 0 300px;
+//             padding: $size-m;
+//             box-sizing: border-box;
+//             margin-right: $size-s;
+//           }
+//           &:nth-child(2){
+//             flex: 1 0 0;
+//             margin-left: $size-s;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   &.col-3{
+//     @include breakpoint(bp-s-m) {
+//       justify-content: space-between;
+//       .column{
+//         width: 32%;
+//       }
+//     }
+//   }
+//   &.col-4{
+//     @include breakpoint(bp-s-m) {
+//       justify-content: space-between;
+//       .column{
+//         width: 49%;
+//       }
+//     }
+//     @include breakpoint(bp-m-l) {
+//       .column{
+//         width: 24%;
+//       }
+//     }
+//   }
+// }
+
+// If you need IE Support use this
+
 .grid{
-  display: flex;
-  flex-wrap: wrap;
-  box-sizing: border-box;
+  clear: both;
+  zoom: 1; // For IE 6/7
+  padding: 0px;
+  margin: 0px;
+  &::before{
+    content: '';
+    display: table;
+  }
+  &::after{
+    clear: both;
+    content: '';
+    display: table;
+  }
   .column{
     transition: width $transition-time $transition-tf;
     width: 100%;
-    margin: $size-m 0 0 0;
+    margin: 1% 0;
     @include breakpoint(bp-s-m) {
-
+      margin: 1% 0 1% 1.6%;
+      display: block;
+      float:left;
+      &:first-child{
+        margin-left:0;
+      }
     }
   }
   &.col-2{
-    @include breakpoint(bp-s) {
-      justify-content: space-between;
-      .column{
-        width: 49%;
-      }
-    }
-    &.right{
-      .column{
-        width: 100%;
-        @include breakpoint(bp-s-m) {
-          width: auto;
-          &:nth-child(1){
-            flex: 1 0 0;
-            margin-right: $size-s;
-          }
-          &:nth-child(2){
-            flex: 0 0 330px;
-            padding: $size-m;
-            box-sizing: border-box;
-            margin-left: $size-s;
-          }
+    .column{
+      @include breakpoint(bp-s) {
+        width: 49.2%;
+        float: left;
+        margin: 1% 0 1% 1.6%;
+        display: block;
+        &:first-child{
+          margin-left:0;
         }
       }
     }
     &.left{
       .column{
-        width: 100%;
-        @include breakpoint(bp-s-m) {
-          width: auto;
+        @include breakpoint(bp-m-l) {
           &:nth-child(1){
-            flex: 0 0 330px;
-            padding: $size-m;
-            box-sizing: border-box;
-            margin-right: $size-s;
+            width: 32.26%;
           }
           &:nth-child(2){
-            flex: 1 0 0;
-            margin-left: $size-s;
+            width: 66.13%;
+          }
+        }
+      }
+    }
+    &.right{
+      .column{
+        @include breakpoint(bp-m-l) {
+          &:nth-child(1){
+            width: 66.13%;
+          }
+          &:nth-child(2){
+            width: 32.26%;
           }
         }
       }
     }
   }
   &.col-3{
-    @include breakpoint(bp-s-m) {
-      justify-content: space-between;
-      .column{
-        width: 32%;
+    .column{
+      @include breakpoint(bp-s-m) {
+        width: 32.26%;
       }
     }
   }
   &.col-4{
-    @include breakpoint(bp-s-m) {
-      justify-content: space-between;
-      .column{
-        width: 49%;
+    .column{
+      @include breakpoint(bp-s-m) {
+        width: 49.2%;
+        &:nth-child(3){
+          margin-left: 0;
+        }
       }
-    }
-    @include breakpoint(bp-m-l) {
-      .column{
-        width: 24%;
+      @include breakpoint(bp-m-l) {
+        width: 23.8%;
+        &:nth-child(3){
+          margin-left: 1.6%;
+        }
+
       }
     }
   }

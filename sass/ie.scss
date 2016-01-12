@@ -1,0 +1,100 @@
+
+/*------------------------------------*\
+    $INTERNET EXPLORER SUPPORT
+\*------------------------------------*/
+@import "utilities/variables.scss";
+@import "utilities/mixins.scss";
+@import "utilities/common.scss";
+
+/*------------------------------------*\
+    $GRID
+\*------------------------------------*/
+
+.grid{
+  clear: both;
+  zoom: 1; // For IE 6/7
+  padding: 0px;
+  margin: 0px;
+  &::before{
+    content: '';
+    display: table;
+  }
+  &::after{
+    clear: both;
+    content: '';
+    display: table;
+  }
+  .column{
+    width: 100%;
+    margin: 1% 0;
+    @include breakpoint(bp-s-m) {
+      margin: 1% 0 1% 1.6%;
+      display: block;
+      float:left;
+      &:first-child{
+        margin-left:0;
+      }
+    }
+  }
+  &.col-2{
+    .column{
+      @include breakpoint(bp-s) {
+        width: 49.2%;
+        float: left;
+        margin: 1% 0 1% 1.6%;
+        display: block;
+        &:first-child{
+          margin-left:0;
+        }
+      }
+    }
+    &.left{
+      .column{
+        @include breakpoint(bp-m-l) {
+          &:nth-child(1){
+            width: 32.26%;
+          }
+          &:nth-child(2){
+            width: 66.13%;
+          }
+        }
+      }
+    }
+    &.right{
+      .column{
+        @include breakpoint(bp-m-l) {
+          &:nth-child(1){
+            width: 66.13%;
+          }
+          &:nth-child(2){
+            width: 32.26%;
+          }
+        }
+      }
+    }
+  }
+  &.col-3{
+    .column{
+      @include breakpoint(bp-s-m) {
+        width: 32.26%;
+      }
+    }
+  }
+  &.col-4{
+    .column{
+      @include breakpoint(bp-s-m) {
+        width: 49.2%;
+        &:nth-child(3){
+          margin-left: 0;
+        }
+      }
+      @include breakpoint(bp-m-l) {
+        width: 23.8%;
+        &:nth-child(3){
+          margin-left: 1.6%;
+        }
+
+      }
+    }
+  }
+}

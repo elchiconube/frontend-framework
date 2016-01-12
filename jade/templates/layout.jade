@@ -10,11 +10,11 @@ html(class='no-js', lang='ES')
         meta(name='viewport', content='width=device-width, initial-scale=1')
         link(rel='shortcut icon', href='/img/favicon.png')
         link(rel='stylesheet', href='/style.css')
+        //[if gt IE 10]><link rel="stylesheet" type="text/css" href="/ie.css" /><![endif]
+        //[if gte IE 11]><link rel="stylesheet" type="text/css" href="/ie.css" /><![endif]
     body
     main.main_content
-        //- <!--[if lt IE 8]>
-        //-     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        //- <![endif]-->
+        //[if lt IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]
         include ../organisms/header.jade
         include ../organisms/nav.jade
         block content

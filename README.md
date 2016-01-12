@@ -61,6 +61,12 @@ This task requires you to have [Ruby](http://www.ruby-lang.org/en/downloads/) an
 
 Note: Files that begin with "_" are ignored even if they match the globbing pattern. This is done to match the expected [Sass partial behaviour](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials).
 
+### PostCSS
+[PostCSS](https://github.com/postcss/postcss) is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more.
+
+#### CSSNano
+[CSSNano](https://github.com/ben-eb/cssnano)is a modular minifier that aims to utilise small modules from the PostCSS ecosystem, rather than being an all-encompassing module that may be difficult to contribute to. Because it is written on top of PostCSS, it is able to do more than simple whitespace transforms - including advanced optimisations such as custom identifier reduction, z-index rebasing, and adjacent selector merging.
+
 ### CSSlint
 Here is the [CSSlint](https://github.com/gruntjs/grunt-contrib-csslint) documentation. If you want to change any option you have a _.csslintrc_ file on root directory. Feel free to change.
 
@@ -83,6 +89,9 @@ Want to contribute? Great! Just open an issue or if you prefer send me a mail or
   - Performance
   - Precommits
 
+## Thanks
+  - [Hector de Lorenzo](http://hectordelorenzo.com/).
+  
 ## Author
 More info about me [here](http://oscarbustos.me/);
 

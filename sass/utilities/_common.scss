@@ -1,23 +1,25 @@
-/*------------------------------------*\
-    $COMMON
-\*------------------------------------*/
-
-// Example to use it
-// @include _(clearfix);
-
 /**
-* Text overflow
-*/
+ * Common
+ *
+ * Example to use it
+ * @include _(clearfix);
+ */
+
+ /**
+  * Text Overflow
+  */
 @include placeholder('text-overflow') {
 	overflow : hidden;
 	text-overflow : ellipsis;
 	white-space : nowrap;
 }
 
+
 /**
-* The ghost, nudged to maintain perfect centering
-*/
+ * The ghost, nudged to maintain perfect centering
+ */
 @include placeholder('vcenter') {
+
 	&:before {
 		content: '';
 		display: inline-block;
@@ -28,11 +30,12 @@
 }
 
 /**
-* Hover with opacity transition
-*/
+ * Hover with opacity transition
+ */
 @include placeholder('hover_opacity') {
 	opacity: 1;
 	transition: opacity $transition-time $transition-tf;
+
 	&:hover {
 		opacity: .5;
 		transition: opacity $transition-time $transition-tf;
@@ -41,17 +44,20 @@
 }
 
 /**
-* Better Underline effect
-*/
+ * Better Underline effect
+ */
 @include placeholder('better_underline') {
 	position: relative;
-	&:hover{
+
+	&:hover {
 		text-decoration: none;
-		&::after{
+
+		&::after {
 			width: 100%;
 		}
 	}
-	&::after{
+
+	&::after {
 		content: '';
 		position: absolute;
 		left: 0;
@@ -61,12 +67,11 @@
 		width: 0;
 		transition: width $transition-time $transition-tf;
 	}
-
 }
 
 /**
-* Image with inside shadow
-*/
+ * Image with inside shadow
+ */
 @include placeholder('shadow-inside') {
 	figure{
 		position: relative;
@@ -85,8 +90,8 @@
 }
 
 /**
-* Hide text only visually
-*/
+ * Hide text only visually
+ */
 @include placeholder('hide-text') {
 	text-indent: 100%;
 	white-space: nowrap;
@@ -94,23 +99,23 @@
 }
 
 /**
-* Hide text
-*/
+ * Hide text
+ */
 @include placeholder('hidden') {
 	display : none !important;
 	visibility : hidden;
 }
 
 /**
-* Hide but keep layout
-*/
+ * Hide but keep layout
+ */
 @include placeholder('invisible') {
 	visibility : hidden;
 }
 
 /**
-* Hide text only visually but is focusable
-*/
+ * Hide text only visually but is focusable
+ */
 @include placeholder('visually-hidden') {
   position: absolute;
   height: 1px;
@@ -120,10 +125,11 @@
 }
 
 /**
-* Clear floats.
-* http://bit.ly/1e3YaBH
-*/
+ * Clear floats.
+ * http://bit.ly/1e3YaBH
+ */
 @include placeholder('clearfix') {
+  
 	&::after{
         content:"";
         display:table;

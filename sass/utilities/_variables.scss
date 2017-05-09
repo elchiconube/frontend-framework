@@ -1,30 +1,24 @@
-/*------------------------------------*\
-    $VARIABLES
-\*------------------------------------*/
+/**
+ * Variables
+ */
 
-/*
-* Basic variables of project
-*/
-
-/*------------------------------------*\
-    $IMAGE-DIR
-\*------------------------------------*/
-
-// Use: background-image:url("#{$image-dir}/btn.jpg");
+/**
+ * Image Directory
+ */
 
 $image-dir: "../img";
 
-/*------------------------------------*\
-    $FONT
-\*------------------------------------*/
+/**
+ * Font
+ */
 
 $font-base  :  'Helvetica Neue',Helvetica,Arial,sans-serif;
 $font-alt   :  Georgia, serif;
 $font-size  :  15px;
 
-/*------------------------------------*\
-    $COLOR
-\*------------------------------------*/
+/**
+ * Colors
+ */
 
 $color-main       :  rgb(68,168,222);
 $color-black      :  rgb(0,0,0);
@@ -43,22 +37,22 @@ $color-gplus 	    :  rgb(221,75,57);
 $color-ig		      :  rgb(78,67,60);
 $color-li		      :  rgb(0,119,181);
 
-/*------------------------------------*\
-    $COLOR CHANGE AMOUNT
-\*------------------------------------*/
+/**
+ * Color change amount
+ */
 
 $amount : 15%;
 
-/*------------------------------------*\
-    $TRANSITIONS
-\*------------------------------------*/
+/**
+ * Transitions
+ */
 
 $transition-time : 300ms;
 $transition-tf: ease-out;
 
-/*------------------------------------*\
-    $SIZES
-\*------------------------------------*/
+/**
+ * Sizes
+ */
 
 $size-s    :  0.5rem;
 $size-s-m  :  0.9rem;
@@ -69,34 +63,34 @@ $size-l-xl :  2.5rem;
 $size-xl   :  3.0rem;
 $size-xxl  :  4.0rem;
 
-/*------------------------------------*\
-    $BORDER
-\*------------------------------------*/
+/**
+ * Borders
+ */
 
 $border-radius : 3px;
 $border-color  : rgb(204,204,204);
 
-/*------------------------------------*\
-    $SHADOW
-\*------------------------------------*/
+/**
+ * Shadows
+ */
 
 $shadow: 0 0.5px 0.2px rgba(0,0,0,.25);
 
-/*------------------------------------*\
-    $INDEX
-\*------------------------------------*/
+/**
+ * Index
+ */
 
 $index-xl: 9999;
 
-/*------------------------------------*\
-    $GUTTER
-\*------------------------------------*/
+/**
+ * Gutter
+ */
 
 $gutter: 10px;
 
-/*------------------------------------*\
-    $BREAKPOINTS
-\*------------------------------------*/
+/**
+ * Breakpoints
+ */
 
 $breakpoints: (
   "bp-xl"  : 85.00em, // 1360px //
@@ -107,7 +101,10 @@ $breakpoints: (
   "bp-s"   : 30.00em  //  480px //
 );
 
-// Default variables
+/**
+ * Default Variables
+ */
+
 $default-breakpoint: root;
 $current-breakpoint: $default-breakpoint;
 $placeholders: ();

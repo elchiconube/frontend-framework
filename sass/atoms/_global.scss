@@ -1,8 +1,8 @@
-/*------------------------------------*\
-    $GLOBAL
-\*------------------------------------*/
+/**
+ * Global
+ */
 
-html{
+html {
 	font-family: $font-base;
 	background-color: $color-white_grey;
 	color:$color-black_grey;
@@ -11,9 +11,9 @@ html{
   -webkit-text-size-adjust: 100%;
 }
 
-/*------------------------------------*\
-    $TEXT
-\*------------------------------------*/
+/**
+ * Text
+ */
 
 h1 {
   font-size: 2rem;
@@ -39,70 +39,77 @@ h6 {
   font-size: .75rem;
 }
 
-p{
+p {
 	margin: 0 0 1rem 0;
 }
 
-blockquote{
+blockquote {
 
 }
 
-/*------------------------------------*\
-    $INLINE ELEMENTS
-\*------------------------------------*/
+/**
+ * Inline Elements
+ */
 
-a{
-
-}
-
-strong{
+a {
 
 }
 
-em{
+strong {
 
 }
 
-/*------------------------------------*\
-    $IMAGES
-\*------------------------------------*/
+em {
 
-img{
+}
+
+/**
+ * Images
+ */
+
+img {
 	max-width: 100%;
  	height: auto;
 }
 
 
-/*------------------------------------*\
-    $FOR EXAMPLE
-\*------------------------------------*/
+/**
+ * For Example
+ */
 
-.center{
+.center {
 	text-align: center;
 }
 
-.example{
+.example {
 	min-height: 100px;
-	div{
+
+	div {
 		background-color: $color-black;
 		min-height: 100px;
 		@include _(vcenter);
+
 		@include breakpoint(bp-s) {
 			opacity: .9;
 	 	}
+
 		@include breakpoint(bp-s-m) {
 			opacity: .7;
 	 	}
+
 		@include breakpoint(bp-m) {
 			opacity: .5;
 	 	}
+
 		@include breakpoint(bp-l) {
 			opacity: .3;
 	 	}
+
 		@include breakpoint(bp-xl) {
 			opacity: .1;
 	 	}
-		p{
+
+		p {
 			color:$color-white;
 		}
 	}

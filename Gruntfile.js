@@ -140,7 +140,7 @@ module.exports = function(grunt) {
   /* Tasks  */
 
   // Ngrok
-  grunt.registerTask('ngrok', ['shell:nrokLauncher']);
+  // grunt.registerTask('ngrok', ['shell:nrokLauncher']);
 
   // Validate HTML
   grunt.registerTask('validate', ['validation', 'csslint']);
@@ -149,6 +149,6 @@ module.exports = function(grunt) {
   grunt.registerTask('start', ['browserSync', 'watch']);
 
   // Initial task
-  grunt.registerTask('default', ['sass', 'jade','shell:ngrokInstaller']);
+  grunt.registerTask('default', ['sass', 'jade']);
 
 };

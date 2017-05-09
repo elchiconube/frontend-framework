@@ -1,14 +1,14 @@
-/*------------------------------------*\
-    $STYLE
-\*------------------------------------*/
 /**
+ * Styles
+ *
  * Here we add all the SASS files that will be
  * compiled at: /css/style.css.
  */
 
 /**
-* Utilities
-**/
+ * Utilities
+ */
+
 @import "utilities/normalize.scss";
 @import "utilities/fonts.scss";
 @import "utilities/icons.scss";
@@ -17,21 +17,22 @@
 @import "utilities/common.scss";
 
 /**
-* Atoms
-**/
- @import "atoms/global.scss";
+ * Atoms
+ */
 
-/**
-* Molecules
-**/
+@import "atoms/global.scss";
+
+ /**
+  * Molecules
+  */
 @import "molecules/grid.scss";
 
 /**
-* Organisms
-**/
+ * Organisms
+ */
 // @import "organisms/file.scss";
 
 /**
-* Templates
-**/
+ * Templates
+ */
 //@import "templates/file.scss";
